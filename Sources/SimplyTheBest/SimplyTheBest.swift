@@ -50,12 +50,12 @@ public struct SimplyTheBest: ParsableCommand {
 			if isDirectory {
 				let studentID = fileURL.lastPathComponent
 				let statsFileURL = fileURL.appending(path: "67-phonebook/compare.csv")
-				if FileManager.default.fileExists(atPath: statsFileURL.path) {
+				if FileManager.default.fileExists(atPath: statsFileURL.path()) {
 					print("Handling stats from \(studentID)...")
 					var hashTableTime = -1
 					var bstTime = -1
 					var statsOfWhichDictionary = ""
-					let lines = try String(contentsOfFile: statsFileURL.path).components(separatedBy: "\n")
+					let lines = try String(contentsOfFile: statsFileURL.path()).components(separatedBy: "\n")
 					for line in lines {
 						if line.isEmpty {
 							continue
@@ -98,6 +98,8 @@ public struct SimplyTheBest: ParsableCommand {
 	
 	private func writeEntries(_ entries: [ImplementationStats], to fileName: String) throws {
 		let fileURL = URL(fileURLWithPath: fileName + ".csv")
+		print("Writing to \(fileURL.path())")
+		try "".data(using: .utf8)?.write(to: fileURL)
 		if let handle = try? FileHandle(forWritingTo: fileURL) {
 			handle.write("StudentID,Hashtable speed,StudentID,BST speed\n".data(using: .utf8)!)
 			for entry in entries {
