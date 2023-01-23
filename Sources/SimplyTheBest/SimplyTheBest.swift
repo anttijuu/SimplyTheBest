@@ -34,6 +34,7 @@ public struct SimplyTheBest: ParsableCommand {
 		var entries = [ImplementationStats]()
 		var hadStatsFileCount = 0
 		var didNotHaveStatsFileCount = 0
+		var probablyTestTimedOutCount = 0
 		
 		print("Reading stats from \(rootDirectory)")
 
@@ -81,7 +82,7 @@ public struct SimplyTheBest: ParsableCommand {
 						entries.append(ImplementationStats(studentID: studentID, hashTableSpeed: hashTableTime, bstSpeed: bstTime))
 						hadStatsFileCount += 1
 					} else {
-						didNotHaveStatsFileCount += 1
+						probablyTestTimedOutCount += 1
 						print("Failed to read stats for hashtable and bst for \(studentID)")
 					}
 				} else {
@@ -91,7 +92,7 @@ public struct SimplyTheBest: ParsableCommand {
 				directoryEnumerator.skipDescendants()
 			}
 		}
-		print("\(hadStatsFileCount) had stats, \(didNotHaveStatsFileCount) did not have stats")
+		print("\(hadStatsFileCount) had stats, \(didNotHaveStatsFileCount) did not have stats, \(probablyTestTimedOutCount) probably timed out")
 		print("Creates stats for \(entries.count) projects")
 		return entries
 	}
