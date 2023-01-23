@@ -6,8 +6,8 @@ As the name of the tool implies, the idea is to find the best (fastest) implemen
 
 The tool assumes that:
 
-* All student projects are located in subdirectories in a root directory. 
-* Subdirectory name is the student's ID.
+* All student projects are located in subdirectories in a specific project root directory. 
+* Subdirectory name is the student's ID. This can be anything but if you would like to share top-10 list with anonymous student id's, this helps.
 * Each student project contains a subtask in a subdirectory named `67-phonebook`.
 * This subdirectory contains a file `compare.csv` having comma separated speed measurements (described below in Input and output files).
 
@@ -17,9 +17,10 @@ The tool:
 2. reads the measurement file `compare.csv` from each student's `67-phonebook` subdirectory,
 3. finds the measurements for hashtable and binary search tree tests,
 4. extracts the execution time for the largest test file `megalopolis.txt`,
-5. saves the student id and execution times of the hashtable and binary search tree for the megalopolix test file into a `csv` file,
+5. saves the student id and execution times of the hashtable and binary search tree for the megalopolis test file into a `csv` file,
 6. this `csv` file then can be opended in any spreadsheet app to analyse and create graphs comparing the execution times of the student projects.
 
+You could also copy/paste the top-10 list or similar after sorting the results by the measured execution time column.
 
 ## Input and output files
 
@@ -49,7 +50,7 @@ capital.txt,90209834,2000000,2435
 megalopolis.txt,227564229,5000000,5253
 ```
 
-And this is an example snippet from resulting output file when all student projects have been processed:
+And this is an example snippet from resulting output file when all student projects have been processed (anonymous student id's here):
 
 ```console
 StudentID,Hashtable speed,StudentID,BST speed
@@ -66,7 +67,7 @@ This is an example of how the produced `csv` file opened in Apple Numbers and th
 
 ## Building and running
 
-The tool uses the [Swift Argument Parser](https://github.com/apple/swift-argument-parser) component. The tool also uses some macOS 13 dependent APIs. 
+The tool uses the [Swift Argument Parser](https://github.com/apple/swift-argument-parser) component. The tool also uses some macOS 13 dependent `FileManager` APIs. 
 
 Building from the command line:
 
@@ -74,17 +75,21 @@ Building from the command line:
 swift build
 ```
 
-And running:
+And running (also builds if changes in code):
 
 ```console
-swift run SimplyTheBest /Users/your-user-account/workspace/tira-2022-student/evaluation/ results
+swift run SimplyTheBest /Users/your-user-account/project-root-directory/ results
 ```
 Where the parameters are:
 
-1. the directory where the student projects are located,
+1. the project root directory where the student project directories are located,
 2. the output file name (without extension) where the output data is stored.
 
-Then just open the resulting output file in Apple Numbers, MS Excel or similar.
+Then just open the resulting output file in Apple Numbers, MS Excel or similar:
+
+```console
+open results.csv
+```
 
 # License
 
