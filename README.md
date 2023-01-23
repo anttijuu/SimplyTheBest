@@ -61,7 +61,7 @@ StudentID,Hashtable speed,StudentID,BST speed
 ```
 The student id column is repeated since it is then easier to cut and paste the hashtable and binary search tree columns to different sheets and sort and graph them separately by execution speed.
 
-This is an example of how the produced `csv` file opened in Apple Numbers and the execution times are plotted (student id's redacted for  privacy'):
+This is an example of how the produced `csv` file opened in Apple Numbers and the execution times are plotted (student id's redacted for privacy):
 
 ![Plotted data columns in Apple Numbers](sample-analysis.png)
 
