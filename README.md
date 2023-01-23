@@ -109,6 +109,8 @@ OPTIONS:
   -h, --help              Show help information.
 ```
 
+> Do note that Swift argument parser claims that you should use the command `simply-the-best` -- actually that does not work, you should use the command `SimplyTheBest`. I do not know why it does this.
+
 # License
 
 MIT License
