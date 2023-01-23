@@ -59,7 +59,7 @@ StudentID,Hashtable speed,StudentID,BST speed
 21346576,9413,21346576,9227
 ...
 ```
-The student id column is repeated since it is then easier to cut and paste the hashtable and binary search tree columns to different sheets and sort and graph them separately by execution speed.
+The student id column is repeated since it is then easier to cut and paste the hashtable and binary search tree columns to different spreadsheets and sort and graph them separately by execution speed.
 
 This is an example of how the produced `csv` file opened in Apple Numbers and the execution times are plotted (student id's redacted for privacy):
 
@@ -83,7 +83,7 @@ swift run SimplyTheBest /Users/your-user-account/project-root-directory/ results
 
 > You can obviously also run the built binary, wherever it is located on your Mac.
 
-The parameters are:
+The parameters you must give to the tool are:
 
 1. the project root directory where the student project directories are located,
 2. the output file name (without extension) where the output data is stored.
