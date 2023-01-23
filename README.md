@@ -67,9 +67,9 @@ This is an example of how the produced `csv` file opened in Apple Numbers and th
 
 ## Building and running
 
-The tool uses the [Swift Argument Parser](https://github.com/apple/swift-argument-parser) component. The tool also uses some macOS 13 dependent `FileManager` APIs. 
+The tool uses the [Swift Package Manager](https://www.swift.org/package-manager/) and the [Swift Argument Parser](https://github.com/apple/swift-argument-parser) component. The tool also uses some macOS 13 dependent `FileManager` APIs. 
 
-Building from the command line:
+Building from the command line (in the project root directory):
 
 ```console
 swift build
