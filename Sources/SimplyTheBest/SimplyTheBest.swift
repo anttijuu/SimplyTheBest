@@ -4,7 +4,7 @@ import Foundation
 @main
 public struct SimplyTheBest: ParsableCommand {
 
-	public static let configuration = CommandConfiguration(abstract: "A Swift command-line tool find the fastest implementations of 67-phonebook amon several projects.")
+	public static let configuration = CommandConfiguration(abstract: "A Swift command-line tool find the fastest implementations of 67-phonebook among several projects.")
 	
 	@Argument(help: "The root directory for all the student projects.")
 	private var rootDirectory: String

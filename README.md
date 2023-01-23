@@ -80,7 +80,10 @@ And running (also builds if changes in code):
 ```console
 swift run SimplyTheBest /Users/your-user-account/project-root-directory/ results
 ```
-Where the parameters are:
+
+> You can obviously also run the built binary, wherever it is located on your Mac.
+
+The parameters are:
 
 1. the project root directory where the student project directories are located,
 2. the output file name (without extension) where the output data is stored.
@@ -89,6 +92,21 @@ Then just open the resulting output file in Apple Numbers, MS Excel or similar:
 
 ```console
 open results.csv
+```
+
+Run the tool with option `-h` (or `--help`) to see the usage instructions:
+
+```console
+OVERVIEW: A Swift command-line tool find the fastest implementations of 67-phonebook among several projects.
+
+USAGE: simply-the-best <root-directory> <output-file>
+
+ARGUMENTS:
+  <root-directory>        The root directory for all the student projects.
+  <output-file>           Output file name where to write the stats, without file name extension.
+
+OPTIONS:
+  -h, --help              Show help information.
 ```
 
 # License
